@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap");
+html {
+  background-color: #EFF5F9;
+  color: #23272A;
+  font-family: "Yantramanav", sans-serif;
+}
+
+body {
+  font-family: "Yantramanav", sans-serif;
+  background-color: #EFF5F9;
+}
+
+h1 {
+  font-weight: 800;
+  font-family: "Yantramanav", sans-serif;
+}
+
+h2 {
+  font-size: 3vh o !important;
+  font-weight: 700;
+}
+
+a {
+  color: #23272A;
+}
+
+.left-bar {
+  height: 95vh;
+  width: 5rem;
+  background-color: #23272A !important;
+  color: #FFFFFF !important;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #FFFFFF !important;
+  background-color: #23272A !important;
+}
+
+.nav-link {
+  color: #FFFFFF;
+}
+
+.active-logo {
+  background-color: #EFF5F9;
+  border-radius: 15px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #EFEFEF;
+  margin: auto;
+  border-radius: 10px;
+  color: #FFFFFF !important;
+  padding: auto;
+  /* margin: 10px auto; */
+}
+
+.menu-lateral {
+  font-size: 25px;
+  padding: 30px;
+  color: #23272A;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #0d6efd;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.name_empresa {
+  font-size: 14px;
+}
+
+.icon {
+  height: 4vh !important;
+  width: 4vw !important;
+}
+
+.notificacion {
+  color: #FFFFFF !important;
+}
+
+.card {
+  background-color: #FFFFFF !important;
+  border-radius: 20px !important;
+  height: 600px;
+  width: 100%;
+}
+
+.texto-vertical-3 {
+  margin-top: 40px;
+  font-size: 100px;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.btn-dark {
+  color: #FFFFFF;
+  background-color: #23272A !important;
+  border-color: #23272A !important;
+}
+
+.rounded {
+  border-radius: 20px !important;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 530px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type=email] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type=password] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

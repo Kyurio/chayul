@@ -1,0 +1,29 @@
+html {
+    background-color: $gris;
+    color: $negro;
+    font-family:  $font-family;
+}
+
+body {
+
+    font-family: $font-family;
+    background-color: $gris;
+}
+
+h1 {
+
+    font-weight: 800;
+    font-family: $font-family;
+
+}
+
+h2 {
+
+    font-size: 3vh o !important;
+    font-weight: 700;
+
+}
+
+a {
+    color: $negro;
+}

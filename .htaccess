@@ -1,0 +1,19 @@
+RewriteEngine on
+indexIgnore *
+DefaultLanguage es-ES
+
+#Redirecciona al index
+RewriteRule ^$ /rae/views/login.php [L]
+
+#buscar el archivo ingresado en la url
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#Urls amigables
+RewriteRule ^([a-zA-Z0-9/]+)$ /rae/views/$1.php [NC,L]
+
+
+#Error
+ErrorDocument 404 /rae/error/404.php
+ErrorDocument 500 /rae/error/500.php
+ErrorDocument 403 /rae/error/403.php
+ErrorDocument 300 /rae/error/300.php

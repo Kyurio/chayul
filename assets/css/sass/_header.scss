@@ -1,0 +1,74 @@
+.left-bar {
+
+    height: 95vh;
+    width: 5rem;
+    background-color: $negro !important;
+    color: $blanco !important;
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+
+
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+
+    color: $blanco !important;
+    background-color: $negro !important;
+
+}
+
+.nav-link {
+    color: $blanco;
+}
+
+.active-logo {
+
+    background-color: $gris;
+    border-radius: 15px;
+}
+
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: #EFEFEF;
+    margin: auto;
+    border-radius: 10px;
+    color: $blanco !important;
+    padding: auto;
+    /* margin: 10px auto; */
+}
+
+
+.menu-lateral {
+    font-size: 25px;
+    padding: 30px;
+    color: $negro;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #0d6efd;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+
+
+.name_empresa {
+    font-size: 14px;
+}
+// tamaño de los aria-controls
+
+.icon {
+    height: 4vh !important;
+    width: 4vw !important;
+}
+
+.notificacion{
+
+    color: $blanco !important;
+
+}
