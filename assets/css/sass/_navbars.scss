@@ -1,0 +1,138 @@
+//******************************************************************************
+//
+//
+// estilos navbar
+//
+//
+//******************************************************************************
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: $negro;
+    background-color: $gris;
+    border-radius: 15px;
+}
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #EFEFEF;
+  margin: auto;
+  border-radius: 10px;
+  color: #1E2019 !important;
+  width: 50px;
+  padding: 10px
+}
+//******************************************************************************
+//
+//
+// estilos de el menu flotante lateral
+//
+//
+//******************************************************************************
+
+.menu-lateral {
+    font-size: 25px;
+    color: $negro;
+}
+//******************************************************************************
+//
+//
+// menu
+//
+//
+//******************************************************************************
+
+.sidebar {
+    width: 5rem;
+    height: 94vh;
+    background-color: #ffffff !important;
+    border-left: 1px solid #EDEEEB;
+    border-radius: 15px;
+    margin-top: 25px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+}
+@media only screen and (max-width: 600px) {
+    .sidebar {
+        display: none !important;
+    }
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    /* background-color: #EFEFEF; */
+    margin: auto;
+    border-radius: 10px;
+    color: #1E2019 !important;
+    width: 50px;
+    /* padding: 10px; */
+}
+//******************************************************************************
+//
+//
+// tamaño de texto de nombre empresa
+//
+//
+//******************************************************************************
+
+.name_empresa {
+    font-size: 14px;
+}
+
+.icon {
+    height: 50%;
+    width: 50%;
+}
+
+.icon-small {
+    height: 10px;
+    width: 10px;
+}
+
+.titulo {
+    display: block;
+}
+
+.menu {
+    display: none !important;
+}
+@media only screen and (max-width: 600px) {
+    .menu {
+        display: block !important;
+    }
+
+    .titulo {
+        display: none;
+        position: fixed;
+    }
+}
+//******************************************************************************
+//
+//
+// tamaño de texto de nombre empresa
+//
+//
+//******************************************************************************
+
+.title-nav {
+
+	display: none;
+	margin-left: -18vw !important;
+	text-transform: uppercase;
+	background: $blanco;
+	padding: 2vh;
+	border-radius: $radius;
+	position: absolute;
+
+}
+
+a:hover  span.title-nav{
+
+	position: relative;
+	display: block;
+	margin-top: -30px !important;
+	margin-right: -17px !important;
+	margin-left: -130px !important;
+	text-align: left;
+	transition-delay: all .3s linear;
+
+
+}

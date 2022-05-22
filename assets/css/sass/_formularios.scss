@@ -1,0 +1,224 @@
+input:focus {
+    outline: none;
+}
+
+input,
+select,
+textarea {
+    // height: 40px;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    border-radius: 0 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 8px solid;
+    transition: padding 0.3s 0.2s ease;
+    color: $negro !important;
+
+    &:focus {
+        padding-bottom: 5px;
+    }
+    // sibling magic ;o
+    &:focus + .line {
+        &:after {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.input-search {
+    text-transform: none !important;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+
+[type="file"] {
+    /* Style the color of the message that says 'No file chosen' */
+    color: #878787;
+}
+
+[type="file"]::-webkit-file-upload-button {
+    background: $blanco;
+    color: $negro;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    transition: all 1s ease;
+}
+
+[type="file"]::-webkit-file-upload-button:hover {
+    background: #fff;
+    border: 2px solid #535353;
+    color: $negro;
+}
+
+[type="color"] {
+    /* Style the color of the message that says 'No file chosen' */
+}
+
+[type="checkbox"] {
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid $negro !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+}
+
+.danger {
+    border-bottom: 2px $rojo solid !important;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-label {
+    margin-bottom: 0 !important;
+}
+// sitches
+
+.switch {
+    --line: #E8EBFB;
+    --dot: #275EFE;
+    --circle: #D3D4EC;
+    --background: #fff;
+    --duration: 0.3s;
+    --text: #1E2019;
+    --shadow: 0 1px 3px #{rgba(#00093D, .08)};
+
+    input {
+        display: none;
+
+        & + div {
+            position: relative;
+
+            &:after,
+            &:before {
+                --s: 1;
+                content: '';
+                position: absolute;
+                height: 4px;
+                top: 10px;
+                width: 24px;
+                background: var(--line);
+                transform: scaleX(var(--s));
+                transition: transform var(--duration) ease;
+            }
+
+            &:before {
+                --s: 0;
+                left: 0;
+                transform-origin: 0 50%;
+                border-radius: 2px 0 0 2px;
+            }
+
+            &:after {
+                left: 28px;
+                transform-origin: 100% 50%;
+                border-radius: 0 2px 2px 0;
+            }
+
+            span {
+                padding-left: 56px;
+                line-height: 24px;
+                color: var(--text);
+
+                &:before {
+                    --x: 0;
+                    --b: var(--circle);
+                    --s: 4px;
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    box-shadow: inset 0 0 0 var(--s) var(--b);
+                    transform: translateX(var(--x));
+                    transition: box-shadow var(--duration) ease, transform var(--duration) ease;
+                }
+
+                &:not(:empty) {
+                    padding-left: 64px;
+                }
+            }
+        }
+
+        &:checked {
+            & + div {
+                &:before {
+                    --s: 1;
+                }
+
+                &:after {
+                    --s: 0;
+                }
+
+                span {
+                    &:before {
+                        --x: 28px;
+                        --s: 12px;
+                        --b: var(--dot);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.form-control.active:focus,
+.form-control.dropdown-toggle.show:focus,
+.form-control:active + input:focus,
+.form-control:active:focus,
+.form-control:checked + input:focus {
+    box-shadow: red !important;
+}

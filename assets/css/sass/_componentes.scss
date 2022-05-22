@@ -1,32 +1,237 @@
-.card {
+//******************************************************************************
+//
+//
+// estilos loeader
+//
+//
+//******************************************************************************
 
-    background-color: $blanco !important;
-    border-radius: 20px !important;
-    height: 600px;
+.no-scroll-y {
+    overflow-y: hidden;
+}
+/* Preloader */
+.ctn-preloader {
+    align-items: center;
+    cursor: none;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
-
+    z-index: 900;
 }
 
+.ctn-preloader .animation-preloader {
+    position: absolute;
+    z-index: 100;
+}
+/* Spinner cargando */
+.ctn-preloader .animation-preloader .spinner {
+    animation: spinner 1s infinite linear;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #000000;
+    /* No se identa por orden alfabetico para que no lo sobre-escriba */
+    height: 9em;
+    margin: 0 auto 3.5em;
+    width: 9em;
+}
+/* Texto cargando */
+.ctn-preloader .animation-preloader .txt-loading {
+    font: $font-family;
+    text-align: center;
+    user-select: none;
+}
+
+.ctn-preloader .loader-section {
+    background-color: #ffffff;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: calc(50% + 1px);
+}
+
+.ctn-preloader .loader-section.section-left {
+    left: 0;
+}
+
+.ctn-preloader .loader-section.section-right {
+    right: 0;
+}
+/* Efecto de fade en la animación de cargando */
+.loaded .animation-preloader {
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+/* Efecto de cortina */
+.loaded .loader-section.section-left {
+    transform: translateX(-101%);
+    transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1.000);
+}
+
+.loaded .loader-section.section-right {
+    transform: translateX(101%);
+    transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1.000);
+}
+/* Animación del preloader */
+@keyframes spinner {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+/* Animación de las letras cargando del preloader */
+@keyframes letters-loading {
+    0%,
+    100%,
+    75% {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+
+    25%,
+    50% {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+/* Tamaño de portatil hacia atras (portatil, tablet, celular) */
+@media screen and (max-width: 767px) {
+    /* Preloader */
+    /* Spinner cargando */
+    .ctn-preloader .animation-preloader .spinner {
+        height: 8em;
+        width: 8em;
+    }
+    /* Texto cargando */
+    .ctn-preloader .animation-preloader .txt-loading {
+        font: $font-family;
+    }
+}
+@media screen and (max-width: 500px) {
+    /* Prelaoder */
+    /* Spinner cargando */
+    .ctn-preloader .animation-preloader .spinner {
+        height: 7em;
+        width: 7em;
+    }
+    /* Texto cargando */
+    .ctn-preloader .animation-preloader .txt-loading {
+        font: $font-family;
+    }
+}
+//******************************************************************************
+//
+//
+// estilos dashboard
+//
+//
+//******************************************************************************
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+//******************************************************************************
+//
+//
+// estilos navbar
+//
+//
+//******************************************************************************
 
 .texto-vertical-3 {
-
-    margin-top: 40px;
-    font-size: 100px;
-    -webkit-writing-mode: vertical-lr;
-    -ms-writing-mode: tb-lr;
     writing-mode: vertical-lr;
-    -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
 }
+@media only screen and (max-width: 600px) {
+    .texto-vertical-3 {
+        display: none;
+    }
+}
+//******************************************************************************
+//
+//
+// offcanvas
+//
+//
+//******************************************************************************
 
-.btn-dark {
-
-    color: $blanco;
-    background-color: $negro !important;
-    border-color: $negro !important;
-
+.offcanvas-bottom {
+    right: 0;
+    left: 0;
+    height: 100vh !important;
+    max-height: 100%;
+    border-top: 1px solid rgba(0,0,0,.2);
+    width: 100vw !important;
+    transform: translateY(100%);
 }
 
-.rounded {
-    border-radius: 20px !important;
+.offcanvas-end {
+    position: fixed;
+    bottom: 0;
+    z-index: 1045;
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    max-width: 100%;
+    visibility: hidden;
+    background-color: #fff;
+    background-clip: padding-box;
+    outline: 0;
+    transition: transform 0.3s ease-in-out;
+}
+//******************************************************************************
+//
+//
+// tablas
+//
+//
+//******************************************************************************
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #212529;
+    text-decoration: none;
+    background-color: #fff;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0,0,0,.125) !important;
+}
+//******************************************************************************
+//
+//
+// card
+//
+//
+//******************************************************************************
+
+.tipo_evento {
+    font-size: 16px;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.fa-solid,
+.fas {
+    font-weight: 900;
+    font-size: 18px !important;
+}
+//******************************************************************************
+//
+//
+// logo
+//
+//
+//******************************************************************************
+
+.logo {
+    width: 5vw;
+    height:  5vh;
 }

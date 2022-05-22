@@ -10,13 +10,17 @@
 
 <div class="row">
 
+
     <div class="col-2">
-
-        <?php
-            require_once("../components/sidebar.php");
-        ?>
-
+        <div class="mt-5 mb-5 py-5 mx-5 p-5 ms-2">
+            <div class="texto-vertical-3">
+                <h2>
+                    {{ titles }}
+                </h2>
+            </div>
+        </div>
     </div>
+
     <div class="col-8">
 
 
@@ -86,6 +90,15 @@
                     </div>
                     <!-- end notificaciones -->
 
+                    <!-- notificaciones -->
+                    <div class="tab-pane fade" id="v-pills-mensajes" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">
+                        <?php
+                                require_once("../components/tabs/mensajes.php");
+                            ?>
+                    </div>
+                    <!-- end notificaciones -->
+
                 </div>
             </div>
         </section>
@@ -93,7 +106,9 @@
 
     </div>
     <div class="col-2">
-        
+        <?php
+            require_once("../components/sidebar.php");
+        ?>
     </div>
 
 

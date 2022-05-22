@@ -1,0 +1,17 @@
+RewriteEngine on
+
+#Redirecciona al index
+RewriteRule ^$ /web/views/index.php [L]
+
+#buscar el archivo ingresado en la url
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#Urls amigables
+RewriteRule ^([a-zA-Z0-9/]+)$ /web/views/$1.php [NC,L]
+
+
+#Error
+ErrorDocument 404 /web/error/404.php
+ErrorDocument 500 /web/error/500.php
+ErrorDocument 403 /web/error/403.php
+ErrorDocument 300 /web/error/300.php

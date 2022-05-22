@@ -1,34 +1,28 @@
 <?php
 
-class Blog extends Conexion {
+class About extends Conexion {
 
+    private static $id_quienes_somos;
     private static $id_usuario;
-    private static $id_blog;
     private static $titulo;
     private static $detalle;
-    private static $imagen;
     private static $estado;
-    private static $etiquetas;
 
-    public static function GrabarPost($id_usuario, $titulo, $detalle, $etiquetas, $imagen, $estado){
+    public static function GrabarAbout($id_usuario, $titulo, $detalle, $estado) {
 
         try {
 
             self::$id_usuario = filter_var($id_usuario, FILTER_SANITIZE_NUMBER_INT);
             self::$titulo = filter_var($titulo, FILTER_SANITIZE_STRING);
             self::$detalle = filter_var($detalle, FILTER_SANITIZE_STRING);
-            self::$imagen = filter_var($imagen, FILTER_SANITIZE_STRING);
-            self::$etiquetas = filter_var($etiquetas, FILTER_SANITIZE_STRING);
             self::$estado = filter_var($estado, FILTER_SANITIZE_NUMBER_INT);
 
-            $sql = "INSERT INTO blog (`id_usuario`, `titulo`, `detalle`, `imagen`, `etiquetas`, `estado`) VALUES (:id_usuario, :titulo, :detalle, :etiquetas, :imagen, :estado);";
+            $sql = "INSERT INTO `quienes_somos` (`id_usuario`, `titulo`, `detalle`, `estado`) VALUES (:id_usuario, :titulo, :detalle, :estado)";
             $stmt = Conexion::conectar()->prepare($sql);
 
             $stmt->bindParam(":id_usuario", self::$id_usuario, PDO::PARAM_STR);
             $stmt->bindParam(":titulo", self::$titulo, PDO::PARAM_STR);
             $stmt->bindParam(":detalle", self::$detalle, PDO::PARAM_STR);
-            $stmt->bindParam(":etiquetas", self::$etiquetas, PDO::PARAM_STR);
-            $stmt->bindParam(":imagen", self::$imagen, PDO::PARAM_STR);
             $stmt->bindParam(":estado", self::$estado, PDO::PARAM_INT);
 
             if($stmt->execute()){
@@ -45,14 +39,14 @@ class Blog extends Conexion {
         }
     }
 
-    public static function ListadoPost($id_usuario) {
+    public static function ListadoAbout($id_usuario) {
 
         try{
 
             self::$id_usuario = filter_var($id_usuario, FILTER_SANITIZE_NUMBER_INT);
 
             //consulta
-            $sql = "SELECT * FROM `blog` WHERE id_usuario = :id_usuario ORDER BY `blog`.`id_blog` DESC";
+            $sql = "SELECT * FROM `quienes_somos` WHERE id_usuario = :id_usuario ORDER BY `quienes_somos`.`id_quienes_somos` DESC";
             $stmt = Conexion::conectar()->prepare($sql);
             $stmt->bindParam(":id_usuario", self::$id_usuario, PDO::PARAM_INT);
 
@@ -68,17 +62,17 @@ class Blog extends Conexion {
         }
     }
 
-    public static function EliminarPost($id_usuario, $id_blog) {
+    public static function EliminarAbout($id_usuario, $id_quienes_somos) {
 
         try {
 
            self::$id_usuario = filter_var($id_usuario, FILTER_SANITIZE_NUMBER_INT);
-           self::$id_blog = filter_var($id_blog, FILTER_SANITIZE_NUMBER_INT);
+           self::$id_quienes_somos = filter_var($id_quienes_somos, FILTER_SANITIZE_NUMBER_INT);
 
-           $sql = "DELETE FROM blog WHERE id_blog = :id_blog AND id_usuario = :id_usuario";
+           $sql = "DELETE FROM quienes_somos WHERE id_quienes_somos = :id_quienes_somos AND id_usuario = :id_usuario";
            $stmt = Conexion::conectar()->prepare($sql);
 
-           $stmt->bindParam(":id_blog", self::$id_blog, PDO::PARAM_INT);
+           $stmt->bindParam(":id_quienes_somos", self::$id_quienes_somos, PDO::PARAM_INT);
            $stmt->bindParam(":id_usuario", self::$id_usuario, PDO::PARAM_INT);
 
            if($stmt->execute()){
@@ -95,7 +89,7 @@ class Blog extends Conexion {
 
     }
 
-    public static function CambiarEstado($id_usuario, $id_post, $estado) {
+    public static function CambiarEstado($id_usuario, $id_quienes_somos, $estado) {
 
         try {
 
@@ -103,10 +97,10 @@ class Blog extends Conexion {
            self::$id_blog = filter_var($id_blog, FILTER_SANITIZE_NUMBER_INT);
            self::$estado = filter_var($estado, FILTER_SANITIZE_NUMBER_INT);
 
-           $sql = "UPDATE blog SET estado=:estado WHERE id_blog=:id_blog AND id_usuario=:id_usuario";
+           $sql = "UPDATE quienes_somos SET estado=:estado WHERE id_quienes_somos=:id_quienes_somos AND id_usuario=:id_usuario";
            $stmt = Conexion::conectar()->prepare($sql);
 
-           $stmt->bindParam(":id_blog", self::$id_blog, PDO::PARAM_INT);
+           $stmt->bindParam(":id_blog", self::$id_quienes_somos, PDO::PARAM_INT);
            $stmt->bindParam(":id_usuario", self::$id_usuario, PDO::PARAM_INT);
            $stmt->bindParam(":estado", self::$estado, PDO::PARAM_INT);
 
